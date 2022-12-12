@@ -1,0 +1,6 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_ultra_shine_personaje,ultra_shine.personaje,model_ultra_shine_personaje,base.group_user,1,1,1,1
+access_ultra_shine_personaje_unidad,ultra_shine.personaje_unidad,model_ultra_shine_personaje_unidad,base.group_user,1,1,1,1
+access_ultra_shine_banner_personaje,ultra_shine.banner_personaje,model_ultra_shine_banner_personaje,base.group_user,1,1,1,1
+access_ultra_shine_enemigo,ultra_shine.enemigo,model_ultra_shine_enemigo,base.group_user,1,1,1,1
+access_ultra_shine_cuenta,ultra_shine.cuenta,model_ultra_shine_cuenta,base.group_user,1,1,1,1

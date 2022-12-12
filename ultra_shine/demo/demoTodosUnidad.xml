@@ -1,0 +1,203 @@
+<odoo>
+    <data>
+
+        <record id="personaje01" model="ultra_shine.personaje_unidad">
+            <field name="name">Mifune</field>
+                </record>
+
+        <record id="personaje02" model="ultra_shine.personaje_unidad">
+            <field name="name">Hisui</field>
+            </record>
+
+        <record id="personaje03" model="ultra_shine.personaje_unidad">
+            <field name="name">General Griff</field>
+                </record>
+
+        <record id="personaje04" model="ultra_shine.personaje_unidad">
+            <field name="name">Marlo</field>
+            </record>
+
+        <record id="personaje05" model="ultra_shine.personaje_unidad">
+            <field name="name">Iris</field>
+                </record>
+
+        <record id="personaje06" model="ultra_shine.personaje_unidad">
+            <field name="name">Holy Ark</field>
+            </record>
+
+        <record id="personaje07" model="ultra_shine.personaje_unidad">
+            <field name="name">Feng</field>
+            </record>
+
+        <record id="personaje08" model="ultra_shine.personaje_unidad">
+            <field name="name">Baelfyr</field>
+            </record>
+        <record id="personaje09" model="ultra_shine.personaje_unidad">
+            <field name="name">Gwill Eclipse</field>
+            </record>
+
+        <record id="personaje10" model="ultra_shine.personaje_unidad">
+            <field name="name">Hakuzo</field>
+                </record>
+
+        <record id="personaje11" model="ultra_shine.personaje_unidad">
+            <field name="name">Jhonny</field>
+            </record>
+
+        <record id="personaje12" model="ultra_shine.personaje_unidad">
+            <field name="name">Jin</field>
+                </record>
+
+        <record id="personaje13" model="ultra_shine.personaje_unidad">
+            <field name="name">Zero</field>
+            </record>
+
+        <record id="personaje14" model="ultra_shine.personaje_unidad">
+            <field name="name">Nikaido</field>
+                </record>
+
+        <record id="personaje15" model="ultra_shine.personaje_unidad">
+            <field name="name">Mikael</field>
+            </record>
+
+        <record id="personaje16" model="ultra_shine.personaje_unidad">
+            <field name="name">Zelnite</field>
+                </record>
+
+        <record id="personaje17" model="ultra_shine.personaje_unidad">
+            <field name="name">Feeva</field>
+                </record>
+
+        <record id="personaje18" model="ultra_shine.personaje_unidad">
+            <field name="name">Flag Freed</field>
+            </record>
+
+        <record id="personaje19" model="ultra_shine.personaje_unidad">
+            <field name="name">Florence</field>
+            </record>
+
+        <record id="personaje20" model="ultra_shine.personaje_unidad">
+            <field name="name">Hugh</field>
+                </record>
+
+        <record id="personaje21" model="ultra_shine.personaje_unidad">
+            <field name="name">Kassia</field>
+            </record>
+
+        <record id="personaje22" model="ultra_shine.personaje_unidad">
+            <field name="name">Lancelot</field>
+            </record>
+
+        <record id="personaje23" model="ultra_shine.personaje_unidad">
+            <field name="name">Nyala</field>
+                </record>
+
+        <record id="personaje24" model="ultra_shine.personaje_unidad">
+            <field name="name">Ravea</field>
+            </record>
+
+        <record id="personaje25" model="ultra_shine.personaje_unidad">
+            <field name="name">Phaedra</field>
+                </record>
+
+        <record id="personaje26" model="ultra_shine.personaje_unidad">
+            <field name="name">Hatsune Miku</field>
+            </record>
+
+        <record id="personaje27" model="ultra_shine.personaje_unidad">
+            <field name="name">Festival Hatsune Miku</field>
+            </record>
+            
+        <record id="personaje28" model="ultra_shine.personaje_unidad">
+            <field name="name">Snow Hatsune Miku</field>
+                </record>
+
+        <record id="personaje29" model="ultra_shine.personaje_unidad">
+            <field name="name">Arta</field>
+            </record>
+
+        <record id="personaje30" model="ultra_shine.personaje_unidad">
+            <field name="name">Buck</field>
+            </record>
+
+        <record id="personaje31" model="ultra_shine.personaje_unidad">
+            <field name="name">Cayena</field>
+            </record>
+
+        <record id="personaje32" model="ultra_shine.personaje_unidad">
+            <field name="name">El pirata Pepe</field>
+                </record>
+
+        <record id="personaje33" model="ultra_shine.personaje_unidad">
+            <field name="name">Elania</field>
+            </record>
+
+        <record id="personaje34" model="ultra_shine.personaje_unidad">
+            <field name="name">Gajeel Redfox</field>
+                </record>
+
+        <record id="personaje35" model="ultra_shine.personaje_unidad">
+            <field name="name">Grey Fullbuster</field>
+            </record>
+
+        <record id="personaje36" model="ultra_shine.personaje_unidad">
+            <field name="name">Ken Kaneki</field>
+            </record>
+
+        <record id="personaje37" model="ultra_shine.personaje_unidad">
+            <field name="name">Leopold</field>
+            </record>
+
+        <record id="personaje38" model="ultra_shine.personaje_unidad">
+            <field name="name">Lucy HeartFilia</field>
+                        </record>
+
+        <record id="personaje39" model="ultra_shine.personaje_unidad">
+            <field name="name">Maeri</field>
+            </record>
+
+        <record id="personaje40" model="ultra_shine.personaje_unidad">
+            <field name="name">Mard Geer</field>
+                </record>
+
+        <record id="personaje41" model="ultra_shine.personaje_unidad">
+            <field name="name">Nabris</field>
+            </record>
+
+        <record id="personaje42" model="ultra_shine.personaje_unidad">
+            <field name="name">Yuura Necromancer</field>
+                </record>
+
+        <record id="personaje43" model="ultra_shine.personaje_unidad">
+            <field name="name">Quaid</field>
+                </record>
+
+        <record id="personaje44" model="ultra_shine.personaje_unidad">
+            <field name="name">Lucid Rouche</field>
+                </record>
+
+        <record id="personaje45" model="ultra_shine.personaje_unidad">
+            <field name="name">Saya</field>
+            </record>
+
+        <record id="personaje46" model="ultra_shine.personaje_unidad">
+            <field name="name">Touka</field>
+            </record>
+
+        <record id="personaje47" model="ultra_shine.personaje_unidad">
+            <field name="name">Trixi</field>
+            </record>
+
+        <record id="personaje48" model="ultra_shine.personaje_unidad">
+            <field name="name">Witch Dionel</field>
+               </record>
+
+        <record id="personaje48" model="ultra_shine.personaje_unidad">
+            <field name="name">Yamori</field>
+                        </record>
+
+        <record id="personaje49" model="ultra_shine.personaje_unidad">
+            <field name="name">Zephyr</field>
+                </record>
+</data>
+</odoo>

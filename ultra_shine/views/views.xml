@@ -1,0 +1,420 @@
+<odoo>
+  <data>
+    
+
+    <record model="ir.ui.view" id="ultra_shine.personaje_list">
+      <field name="name">ultra_shine personaje list</field>
+      <field name="model">ultra_shine.personaje</field>
+      <field name="arch" type="xml">
+        <tree decoration-bf="elemento" decoration-danger="elemento=='1'" decoration-info="elemento=='2'"  decoration-success="elemento=='3'" decoration-warning="elemento=='4'" decoration-muted="elemento=='5'" decoration-primary="elemento=='6'">
+          <field name="icono_tumb" widget="image"/>
+
+          <field name="name"/>
+          <field name="rareza"/>
+          <field name="elemento"/>
+          <field name="rol"/>
+          <field name="habilidadActiva"/>
+          <field name="habilidadPasiva"/>
+          <field name="ataque"/>
+          <field name="defensa"/>
+          <field name="vida"/>
+          <field name="velocidad"/>
+
+        </tree>
+      </field>
+    </record>
+     <record model="ir.ui.view" id="ultra_shine.personaje_form">
+            <field name="name">ultra_shine personaje form</field>
+            <field name="model">ultra_shine.personaje</field>
+            <field name="arch" type="xml">
+                <form string="Course Form">
+                    <sheet>
+                      <group>
+                        <group string = "Imagen y Icono">
+                            <field name="sprite" widget="image"/>
+                            <field name="icono" widget="image"/>
+                        </group>
+                        <group string = "Animaciones del Personaje">
+                            <field name="spriteAnimado" widget="image"/>
+                            <field name="spriteAtaque" widget="image"/>
+                        </group>
+                        <group string = "Información del Personaje">
+                            <field name="name"/>
+                            <field name="rareza"/>
+                            <field name="elemento"/>
+                            <field name="rol"/>
+                        </group>
+                        <group string = "Estadisticas del Personaje">
+                            <field name="ataque"/>
+                            <field name="defensa"/>
+                            <field name="vida"/>
+                            <field name="velocidad"/> 
+                        </group>
+                        <group string = "Habilidades del Personaje">
+                          <field name="habilidadActiva"/>
+                          <field name="habilidadPasiva"/>
+                        </group>
+                        <group>
+                          <field name="slotArma"/>
+                        </group>
+                      </group>  
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="ultra_shine.personaje_kanban" model="ir.ui.view">
+          <field name="name">Personaje Kanban</field>
+          <field name="model">ultra_shine.personaje</field>
+          <field name="arch" type="xml">
+          
+            <kanban>
+
+            <field name="id"/>
+            <field name="sprite"/>
+            <field name="name"/>
+          <field name="rareza"/>
+            <field name="elemento"/>
+            <field name="rol"/>
+              <templates>
+                <t t-name="kanban-box">
+                  <div class="oe_kanban_card o_kanban_record_has_image_fill">
+                  <div class="o_kanban_image_fill_left d-none d-md-block"> 
+                      <a type="open">
+                        <img class="oe_kanban_image" t-att-src="kanban_image('ultra_shine.personaje', 'sprite', record.id.value, placeholder)" />
+                      </a>
+                      </div>
+                        <div class="oe_kanban_details d-flex flex-column">
+                        <strong class="o_kanban_record_title oe_partner_heading"><field name="name"/></strong>
+                          <ul> 
+                              <li>Nombre:<field name="name" /> </li>
+                              <li>Rareza:<field name="rareza" /> </li>
+                              <li>Elemento:<field name="elemento" /> </li>
+                              <li>Rol:<field name="rol" /> </li>         
+                          </ul>
+                          </div>
+                      </div>
+                </t>
+              </templates>
+            </kanban>
+          </field>
+        </record>
+
+    <record model="ir.ui.view" id="ultra_shine.personaje_unidad_list">
+      <field name="name">ultra_shine personaje unidad list</field>
+      <field name="model">ultra_shine.personaje_unidad</field>
+      <field name="arch" type="xml">
+        <tree decoration-bf="elemento" decoration-danger="elemento=='1'" decoration-info="elemento=='2'"  decoration-success="elemento=='3'" decoration-warning="elemento=='4'" decoration-muted="elemento=='5'" decoration-primary="elemento=='6'">
+          <field name="icono_tumb" widget="image"/>
+
+          <field name="name"/>
+          <field name="rareza"/>
+          <field name="elemento"/>
+          <field name="rol"/>
+          <field name="habilidadActiva"/>
+          <field name="habilidadPasiva"/>
+          <field name="ataque"/>
+          <field name="defensa"/>
+          <field name="vida"/>
+          <field name="velocidad"/>
+
+        </tree>
+      </field>
+    </record>
+     <record model="ir.ui.view" id="ultra_shine.personaje_unidad_form">
+            <field name="name">ultra_shine personaje unidad form</field>
+            <field name="model">ultra_shine.personaje_unidad</field>
+            <field name="arch" type="xml">
+                <form string="Course Form">
+                    <sheet>
+                      <group>
+                        <group string = "Selecciona el personaje">
+                            <field name="type"/>
+                        </group> 
+                        <group string = "Imagen y Icono">
+                            <field name="sprite" widget="image"/>
+                            <field name="icono" widget="image"/>
+                        </group>
+                        <group string = "Animaciones del Personaje">
+                            <field name="spriteAnimado" widget="image"/>
+                            <field name="spriteAtaque" widget="image"/>
+                        </group>
+                        <group string = "Información del Personaje">
+                            <field name="name"/>
+                            <field name="rareza"/>
+                            <field name="elemento"/>
+                            <field name="rol"/>
+                        </group>
+                        <group string = "Estadisticas del Personaje">
+                            <field name="ataque"/>
+                            <field name="defensa"/>
+                            <field name="vida"/>
+                            <field name="velocidad"/> 
+                        </group>
+                        <group string = "Habilidades del Personaje">
+                          <field name="habilidadActiva"/>
+                          <field name="habilidadPasiva"/>
+                        </group>
+                        <group>
+                          <field name="slotArma"/>
+                        </group>
+                      </group>  
+                    </sheet>
+                </form>
+            </field>
+        </record>
+     <record id="ultra_shine.personaje_unidad_kanban" model="ir.ui.view">
+          <field name="name">Personaje Kanban</field>
+          <field name="model">ultra_shine.personaje_unidad</field>
+          <field name="arch" type="xml">
+            <kanban>
+            <field name="id"/>
+            <field name="sprite"/>
+            <field name="name"/>
+          <field name="rareza"/>
+            <field name="elemento"/>
+            <field name="rol"/>
+              <templates>
+                <t t-name="kanban-box">
+                  <div class="oe_kanban_card o_kanban_record_has_image_fill">
+                  <div class="o_kanban_image_fill_left d-none d-md-block"> 
+                      <a type="open">
+                        <img class="oe_kanban_image"
+                        t-att-src="kanban_image('ultra_shine.personaje_unidad', 'sprite', record.id.value, placeholder)" />
+                      </a>
+                      </div>
+                        <div class="oe_kanban_details d-flex flex-column">
+                        <strong class="o_kanban_record_title oe_partner_heading"><field name="name"/></strong>
+                          <ul> 
+                              <li>Nombre:<field name="name" /> </li>
+                              <li>Rareza:<field name="rareza" /> </li>
+                              <li>Elemento:<field name="elemento" /> </li>
+                              <li>Rol:<field name="rol" /> </li>         
+                          </ul>
+                          </div>
+                      </div>
+                </t>
+              </templates>
+            </kanban>
+          </field>
+        </record>
+
+     <record model="ir.ui.view" id="ultra_shine.banner_personaje_form">
+            
+            <field name="name">ultra_shine banner personaje form</field>
+            <field name="model">ultra_shine.banner_personaje</field>
+            <field name="arch" type="xml">
+                <form string="Course Form">
+                    
+                    <header>
+                        <field name="name"/>
+                        <field name="iconoBanner" widget="image"/>
+                        <field name="player"></field>
+                    </header>
+
+                    <sheet>
+                      <group>
+                        
+                        <group string = "Selecciona al personaje 1">
+                          <field name="unidad1"/>
+                          <field name="rareza1"/>
+                          <field name="sprite1" widget="image"/>
+                        </group>
+                        <group string = "Selecciona al personaje 2">
+                          <field name="unidad2"/>
+                          <field name="rareza2"/>
+                          <field name="sprite2" widget="image"/>
+                        </group>
+                        <group string = "Selecciona al personaje 3">
+                          <field name="unidad3"/>
+                          <field name="rareza3"/>
+                          <field name="sprite3" widget="image"/>
+                        </group>
+                        <group string = "Selecciona al personaje 3">
+                          <field name="unidad4"/>
+                          <field name="rareza4"/>
+                          <field name="sprite4" widget="image"/>
+                        </group>
+                        <group string = "Selecciona al personaje 3">
+                          <field name="unidad5"/>
+                          <field name="rareza5"/>
+                          <field name="sprite5" widget="image"/>
+                        </group>
+                        <group string = "Selecciona al personaje 3">
+                          <field name="unidad6"/>
+                          <field name="rareza6"/>
+                          <field name="sprite6" widget="image"/>
+                        </group> 
+                      
+                         <button name="accionar_banner"
+                                  type="object"
+                                  string="Update"
+                                  class="btn btn-primary"
+                          ></button>
+
+                          
+                          <field name="unidadGanada"/>
+                          <field name="rarezaGanada"/>
+                          <field name="spriteGanada" widget="image"/>
+                       
+                          
+                      </group>
+                    </sheet>
+                  </form>
+              </field>
+        </record>
+
+        
+        
+        <record model="ir.ui.view" id="ultra_shine.banner_personaje_list">
+              <field name="name">ultra_shine banner personaje list</field>
+              <field name="model">ultra_shine.banner_personaje</field>
+              <field name="arch" type="xml">
+                <tree>
+                  <field name="iconoBanner" widget="image"/>
+                  <field name="name"/>
+                  <field name="unidad1"/>
+                  <field name="unidad2"/>
+                  <field name="unidad3"/>
+                  <field name="unidad4"/>
+                  <field name="unidad5"/>
+                  <field name="unidad6"/>
+                    
+                </tree>
+              </field>
+            </record>
+
+
+    <record model="ir.ui.view" id="ultra_shine.enemigo_list">
+      <field name="name">ultra_shine enemgio list</field>
+      <field name="model">ultra_shine.enemigo</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="rareza"/>
+          <field name="elemento"/>
+          <field name="rol"/>
+          <field name="habilidadActiva"/>
+          <field name="ataque"/>
+          <field name="defensa"/>
+          <field name="vida"/>
+          <field name="velocidad"/>          
+        </tree>
+      </field>
+    </record>
+    <record model="ir.ui.view" id="ultra_shine.enemigo_form">
+            <field name="name">ultra_shine enemigo form</field>
+            <field name="model">ultra_shine.enemigo</field>
+            <field name="arch" type="xml">
+                <form string="Course Form">
+                    <sheet>
+                      <group>
+                        <group>
+                            <field name="sprite" widget="image"/>
+                        </group>
+                        <group>
+                            <field name="spriteChibi" widget="image"/>
+                        </group>
+                        <group>
+                            <field name="name"/>
+                            <field name="rareza"/>
+                            <field name="elemento"/>
+                            <field name="rol"/>
+                        </group>
+                        <group>
+                            <field name="ataque"/>
+                            <field name="defensa"/>
+                            <field name="vida"/>
+                            <field name="velocidad"/> 
+                        </group>
+                        <group>
+                          <field name="habilidadActiva"/>
+                        </group>
+                      </group>  
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+    <record model="ir.ui.view" id="ultra_shine.cuenta_list">
+      <field name="name">ultra_shine cuenta list</field>
+      <field name="model">ultra_shine.cuenta</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          
+        </tree>
+      </field>
+    </record>
+
+    <!-- actions opening views on models -->
+
+    <record model="ir.actions.act_window" id="ultra_shine.action_personaje_window">
+      <field name="name">Lista de personajes</field>
+      <field name="res_model">ultra_shine.personaje</field>
+      <field name="view_mode">tree,form,kanban</field>
+    </record>
+
+   <record model="ir.actions.act_window" id="ultra_shine.action_personaje_unidad_window">
+      <field name="name">Lista de personajes Unidad</field>
+      <field name="res_model">ultra_shine.personaje_unidad</field>
+      <field name="view_mode">tree,form,kanban</field>
+    </record>
+
+    
+   <record model="ir.actions.act_window" id="ultra_shine.action_banner_personaje_window">
+      <field name="name">Lista de banners de personajes</field>
+      <field name="res_model">ultra_shine.banner_personaje</field>
+      <field name="view_mode">tree,form,kanban</field>
+      
+    </record>
+
+
+    <record model="ir.actions.act_window" id="ultra_shine.action_enemigo_window">
+      <field name="name">Lista de enemigos</field>
+      <field name="res_model">ultra_shine.enemigo</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="ultra_shine.action_cuenta_window">
+      <field name="name">Lista de cuenta</field>
+      <field name="res_model">ultra_shine.cuenta</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- server action to the one above -->
+<!--
+    <record model="ir.actions.server" id="ultra_shine.action_server">
+      <field name="name">ultra_shine server</field>
+      <field name="model_id" ref="model_ultra_shine_ultra_shine"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": model._name,
+        }
+      </field>
+    </record>
+-->
+
+    <!-- Top menu item -->
+    <menuitem name="Ultra Shine Warriors" id="ultra_shine.menu_root"/>
+    <!-- menu categories -->
+    <menuitem name="Gestión de módulos" id="ultra_shine.menu_1" parent="ultra_shine.menu_root"/>    
+    <!-- actions -->
+    <menuitem name="Personajes" id="ultra_shine.menu_personaje_list" parent="ultra_shine.menu_1"
+              action="ultra_shine.action_personaje_window"/> 
+
+    <menuitem name="Personajes Unidad" id="ultra_shine.menu_personaje_unidad_list" parent="ultra_shine.menu_1"
+              action="ultra_shine.action_personaje_unidad_window"/> 
+
+    <menuitem name="Banners" id="ultra_shine.menu_banner_personaje_list" parent="ultra_shine.menu_1"
+              action="ultra_shine.action_banner_personaje_window"/> 
+
+    <menuitem name="Enemigos" id="ultra_shine.menu_enemigo_list" parent="ultra_shine.menu_1"
+              action="ultra_shine.action_enemigo_window"/> 
+    <menuitem name="Cuentas" id="ultra_shine.menu_cuenta_list" parent="ultra_shine.menu_1"
+              action="ultra_shine.action_cuenta_window"/>   
+  </data>
+</odoo>

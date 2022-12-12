@@ -1,0 +1,14 @@
+<odoo>
+    <data>
+
+    <record id="ultra_shine.banner_personaje_oscuridad" model="ultra_shine.banner_personaje">
+            
+            <field name="name">Banner Oscuridad</field>
+            <field name="personaje">Canno</field>
+
+            
+            
+        </record>
+
+    </data>
+</odoo>
