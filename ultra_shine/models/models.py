@@ -117,7 +117,7 @@ class Banner_Personaje(models.Model):
     _description= 'Seleccionador de personajes para agruparlos y preparar los banners'
     
     name = fields.Char(required=True)
-    iconoBanner = fields.Image(max_width = 200, max_heigth = 200)
+    iconoBanner = fields.Image()
     tirar = fields.Char()
     player = fields.Many2one('ultra_shine.cuenta')
 

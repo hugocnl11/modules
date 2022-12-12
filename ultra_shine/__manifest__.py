@@ -31,6 +31,7 @@
     # only loaded in demonstration mode
     'demo': [
         'demo/demoTodos.xml',
+        'demo/banners.xml',
       #  'demo/demoTodosUnidad.xml',
     ],
 }

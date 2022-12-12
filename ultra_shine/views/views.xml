@@ -208,13 +208,14 @@
                     
                     <header>
                         <field name="name"/>
-                        <field name="iconoBanner" widget="image"/>
+                       
                         <field name="player"></field>
                     </header>
 
                     <sheet>
+                    
                       <group>
-                        
+                        <field name="iconoBanner" widget="image" />
                         <group string = "Selecciona al personaje 1">
                           <field name="unidad1"/>
                           <field name="rareza1"/>
