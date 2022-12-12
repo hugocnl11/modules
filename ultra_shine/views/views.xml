@@ -248,7 +248,7 @@
                       
                          <button name="accionar_banner"
                                   type="object"
-                                  string="Update"
+                                  string="1 Tirada"
                                   class="btn btn-primary"
                           ></button>
 
@@ -283,7 +283,70 @@
                 </tree>
               </field>
             </record>
+        
+        <record model="ir.ui.view" id="ultra_shine.batalla_list">
+              <field name="name">ultra_shine batalla list</field>
+              <field name="model">ultra_shine.batalla</field>
+              <field name="arch" type="xml">
+                <tree>
+                  <field name="player1"/>
+                  <field name="player2"/>
+                  <field name="winner"/>
+                </tree>
+              </field>
+            </record>
+        
+        <record model="ir.ui.view" id="ultra_shine.batalla_form">
+            
+            <field name="name">ultra_shine batalla form</field>
+            <field name="model">ultra_shine.batalla</field>
+            <field name="arch" type="xml">
+                <form string="Course Form">
+                    <sheet>
+                      <group>
+                        <group string = "Selecciona al personaje 1">
+                          <field name="player1"/>
+                        </group>
+                        <group string = "Selecciona al personaje 2">
+                          <field name="player2"/>
+                        </group>
+                         <group string = "PELEA!">
+                         <button name="accionBatalla"
+                                  type="object"
+                                  string="PELEA"
+                                  class="btn btn-primary"
+                          ></button>
+                          </group>
+                          <group string="GANADOR">
+                            <field name="winner"/>
+                          </group>                         
+                          <group string="Fechas">
+                            <field name="dateInicio"></field>
+                            <field name="dateFinal"></field>
+                          </group>                    
+                      </group>
+                    </sheet>
+                  </form>
+              </field>
+        </record>
 
+        <record id="ultra_shine.batalla_calendar" model="ir.ui.view">
+          <field name="name">ultra_shine batalla calendar</field>
+          <field name="model">ultra_shine.batalla</field>
+          <field name="arch" type="xml">
+            <calendar string="" 
+                      date_start="dateInicio"
+                      date_stop="dateFinal" 
+                      color="winner">
+              
+              <field name="player1"/>
+              <field name="player2"/>
+
+              <field name="winner"/>
+                      
+            </calendar>
+          </field>
+        </record>
 
     <record model="ir.ui.view" id="ultra_shine.enemigo_list">
       <field name="name">ultra_shine enemgio list</field>
@@ -369,6 +432,11 @@
       
     </record>
 
+   <record model="ir.actions.act_window" id="ultra_shine.action_batalla_window">
+      <field name="name">Lista de batallas</field>
+      <field name="res_model">ultra_shine.batalla</field>
+      <field name="view_mode">tree,form,calendar</field>
+    </record>
 
     <record model="ir.actions.act_window" id="ultra_shine.action_enemigo_window">
       <field name="name">Lista de enemigos</field>
@@ -411,6 +479,9 @@
 
     <menuitem name="Banners" id="ultra_shine.menu_banner_personaje_list" parent="ultra_shine.menu_1"
               action="ultra_shine.action_banner_personaje_window"/> 
+
+    <menuitem name="Batallas" id="ultra_shine.menu_batalla" parent="ultra_shine.menu_1"
+              action="ultra_shine.action_batalla_window"/> 
 
     <menuitem name="Enemigos" id="ultra_shine.menu_enemigo_list" parent="ultra_shine.menu_1"
               action="ultra_shine.action_enemigo_window"/> 

@@ -21,6 +21,31 @@ class Cuenta(models.Model):
     gemas = fields.Integer()
     personaje=fields.Many2many('ultra_shine.personaje_unidad')
 
+class Batalla(models.Model):
+    _name = 'ultra_shine.batalla'
+    _description = 'Clase para las batallas'
+
+    player1=fields.Many2one('ultra_shine.personaje_unidad')
+    player2=fields.Many2one('ultra_shine.personaje')
+
+    winner = fields.Char() 
+    
+    dateInicio = fields.Datetime() 
+    dateFinal = fields.Datetime()
+    
+    def accionBatalla(self):  # ORM
+        for b in self:
+            nombre1 = b.player1.name
+            nombre2 = b.player2.name 
+            if b.player1.ataque > b.player2.ataque:
+                b.winner = nombre1
+            if b.player2.ataque > b.player1.ataque:
+                b.winner = nombre2
+
+         
+                
+
+
 class Personaje(models.Model):
     _name = 'ultra_shine.personaje'
     _description = 'Personaje Jugable con: nombre, sprite, spriteChibi, nivel, ataque, defensa, vida, velocidad, rol    , rareza (estrellas), elemento y habilidades (pasiva y activa) además de un slot para arma'
