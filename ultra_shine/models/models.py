@@ -10,8 +10,9 @@ import math
 
 class Cuenta(models.Model):
 
-    _name = 'ultra_shine.cuenta'
+    _name = 'res.partner'
     _description = 'Cuenta de Usuario'
+    _inherit = 'res.partner'
 
     #type = fields.One2many('ultra_shine.personaje_unidad', ondelete="restrict", required=True)
 
@@ -20,6 +21,12 @@ class Cuenta(models.Model):
     avatar = fields.Image(max_width = 250, max_heigth = 250)
     gemas = fields.Integer()
     personaje=fields.Many2many('ultra_shine.personaje_unidad')
+
+    is_player = fields.Boolean()
+
+
+
+    
 
 class Batalla(models.Model):
     _name = 'ultra_shine.batalla'
@@ -42,8 +49,7 @@ class Batalla(models.Model):
             if b.player2.ataque > b.player1.ataque:
                 b.winner = nombre2
 
-         
-                
+
 
 
 class Personaje(models.Model):
@@ -119,7 +125,7 @@ class Banner_Personaje(models.Model):
     name = fields.Char(required=True)
     iconoBanner = fields.Image()
     tirar = fields.Char()
-    player = fields.Many2one('ultra_shine.cuenta')
+    player = fields.Many2one('res.partner')
 
     unidad1 = fields.Many2one('ultra_shine.personaje', ondelete="restrict", required=True)
     rareza1 = fields.Selection(related='unidad1.rareza')
@@ -190,7 +196,62 @@ class Banner_Personaje(models.Model):
                     "type": b.unidad6.id
                 })
             
+class crear_banner_wizard(models.TransientModel):
+    _name = 'ultra_shine.crear_banner_wizard'
+    _description = 'Wizard para crear articulo'
+    
+    name = fields.Char(required=True)
+    iconoBanner = fields.Image()
 
+    unidad1 = fields.Many2one('ultra_shine.personaje', ondelete="restrict", required=True)
+    rareza1 = fields.Selection(related='unidad1.rareza')
+    sprite1 = fields.Image(related='unidad1.spriteAnimado')
+    
+    unidad2 = fields.Many2one('ultra_shine.personaje', ondelete="restrict", required=True)
+    rareza2 = fields.Selection(related='unidad2.rareza')
+    sprite2 = fields.Image(related='unidad2.spriteAnimado')
+
+    unidad3 = fields.Many2one('ultra_shine.personaje', ondelete="restrict", required=True)
+    rareza3 = fields.Selection(related='unidad3.rareza')
+    sprite3 = fields.Image(related='unidad3.spriteAnimado')
+
+    unidad4 = fields.Many2one('ultra_shine.personaje', ondelete="restrict", required=True)
+    rareza4 = fields.Selection(related='unidad4.rareza')
+    sprite4 = fields.Image(related='unidad4.spriteAnimado')
+
+    unidad5 = fields.Many2one('ultra_shine.personaje', ondelete="restrict", required=True)
+    rareza5 = fields.Selection(related='unidad5.rareza')
+    sprite5 = fields.Image(related='unidad5.spriteAnimado')
+
+    unidad6 = fields.Many2one('ultra_shine.personaje', ondelete="restrict", required=True)
+    rareza6 = fields.Selection(related='unidad6.rareza')
+    sprite6 = fields.Image(related='unidad6.spriteAnimado')
+    
+    def publicar(self):
+        print("Publicando un banner")
+        self.env['ultra_shine.banner_personaje'].create({
+                    "name": self.name,
+                    "iconoBanner": self.iconoBanner,
+                    "unidad1": self.unidad1.id,
+                    "rareza1": self.rareza1,
+                    "sprite1": self.sprite1,
+                    "unidad2": self.unidad2.id,
+                    "rareza2": self.rareza2,
+                    "sprite2": self.sprite2,
+                    "unidad3": self.unidad3.id,
+                    "rareza3": self.rareza3,
+                    "sprite3": self.sprite3,
+                    "unidad4": self.unidad4.id,
+                    "rareza4": self.rareza4,
+                    "sprite4": self.sprite4,
+                    "unidad5": self.unidad5.id,
+                    "rareza5": self.rareza5,
+                    "sprite5": self.sprite5,
+                    "unidad6": self.unidad6.id,
+                    "rareza6": self.rareza6,
+                    "sprite6": self.sprite6
+                    
+        })
 
 class Comp_Builder(models.Model):
      _name = 'ultra_comp_builder'
