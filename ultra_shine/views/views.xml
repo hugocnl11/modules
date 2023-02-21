@@ -352,8 +352,12 @@
               <field name="arch" type="xml">
                 <tree>
                   <field name="player1"/>
+                  <field name="sprite1" widget="image"/>
                   <field name="player2"/>
+                  <field name="sprite2" widget="image"/>
                   <field name="winner"/>
+                  <field name="winnersprite" widget="image"/>
+
                 </tree>
               </field>
             </record>
@@ -366,11 +370,15 @@
                 <form string="Course Form">
                     <sheet>
                       <group>
+                      
                         <group string = "Selecciona al personaje 1">
                           <field name="player1"/>
+                          <field name="sprite1" widget="image"/>
+                          
                         </group>
                         <group string = "Selecciona al personaje 2">
                           <field name="player2"/>
+                          <field name="sprite2" widget="image"/>
                         </group>
                          <group string = "PELEA!">
                          <button name="accionBatalla"
@@ -381,6 +389,7 @@
                           </group>
                           <group string="GANADOR">
                             <field name="winner"/>
+                            <field name="winnersprite" widget="image"/>
                           </group>                         
                           <group string="Fechas">
                             <field name="dateInicio"></field>

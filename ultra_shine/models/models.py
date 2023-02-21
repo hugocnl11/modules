@@ -7,7 +7,6 @@ from odoo.exceptions import ValidationError
 from datetime import datetime, timedelta
 import math
 
-
 class Cuenta(models.Model):
 
     _name = 'res.partner'
@@ -35,8 +34,13 @@ class Batalla(models.Model):
     player1=fields.Many2one('ultra_shine.personaje_unidad')
     player2=fields.Many2one('ultra_shine.personaje')
 
-    winner = fields.Char() 
-    
+    sprite1 = fields.Image(related='player1.spriteAnimado')
+    sprite2 = fields.Image(related='player2.spriteAnimado')
+
+    winner = fields.Char()
+     
+    winnersprite = fields.Image()
+
     dateInicio = fields.Datetime() 
     dateFinal = fields.Datetime()
     
@@ -46,9 +50,13 @@ class Batalla(models.Model):
             nombre2 = b.player2.name 
             if b.player1.ataque > b.player2.ataque:
                 b.winner = nombre1
+                b.winnersprite = b.sprite1
             if b.player2.ataque > b.player1.ataque:
                 b.winner = nombre2
+                b.winnersprite = b.sprite2
 
+
+    
 
 
 
