@@ -149,8 +149,22 @@ class crear_batalla_wizard(models.TransientModel):
             'target': 'new',
             'res_id': self.id,
             'context': dict(self._context, player1_context=self.player1.id),
-
         }
+
+    def guardar_batalla(self):
+        print("Publicando una batalla")
+        self.env['ultra_shine.batalla'].create({
+                    
+                    "player1": self.player1.id,
+                    "player2": self.player2.id,
+                    "sprite1": self.player1.id,
+                    "sprite1": self.player2.id,
+                    "dateInicio": self.dateInicio,
+                    "dateFinal": self.dateFinal
+
+
+                
+        })
 
         
 

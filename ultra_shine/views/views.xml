@@ -259,22 +259,29 @@
             <field name="model">ultra_shine.banner_personaje</field>
             <field name="arch" type="xml">
                 <form string="Course Form">
-                    
                     <header>
-                        <field name="name"/>
-                       
-                        <field name="player"></field>
-                    </header>
-
-                    <sheet>
-                    
-                      <group>
-                      <button name="%(ultra_shine.crear_banner_action)d"
+                        <field name="name"/><field name="player"></field>
+                        <button name="%(ultra_shine.crear_banner_action)d"
                           type="action"
-                          string="Crear banner personalizado"
+                          string="Crear banner personalizado (WIZARD)"
                           class="btn btn-primary"
                           ></button>
-                        <field name="iconoBanner" widget="image" />
+                    </header>
+                    <sheet>
+                      <group>                       
+                      <field name="iconoBanner" widget="image" />
+                      <button name="accionar_banner"
+                                  type="object"
+                                  string="1 Tirada"
+                                  class="btn btn-primary"
+                          ></button>
+
+                          
+                          <field name="unidadGanada"/>
+                          <field name="rarezaGanada"/>
+                          <field name="spriteGanada" widget="image"/>
+                      
+                        
                         <group string = "Selecciona al personaje 1">
                           <field name="unidad1"/>
                           <field name="rareza1"/>
@@ -306,16 +313,7 @@
                           <field name="sprite6" widget="image"/>
                         </group> 
                       
-                         <button name="accionar_banner"
-                                  type="object"
-                                  string="1 Tirada"
-                                  class="btn btn-primary"
-                          ></button>
-
-                          
-                          <field name="unidadGanada"/>
-                          <field name="rarezaGanada"/>
-                          <field name="spriteGanada" widget="image"/>
+                        
                        
                           
                       </group>
@@ -351,6 +349,7 @@
               <field name="model">ultra_shine.batalla</field>
               <field name="arch" type="xml">
                 <tree>
+                
                   <field name="player1"/>
                   <field name="sprite1" widget="image"/>
                   <field name="player2"/>
@@ -392,8 +391,11 @@
                         <group states="3">
                             <field name="dateInicio"></field>
                             <field name="dateFinal"></field>
+                            <button name="guardar_batalla" type="object" string="Guardar" class="oe_highlight"></button>
                         </group>
+                        <footer>
                         
+                        </footer>
                 </form>
             </field>
         </record> 
@@ -406,36 +408,34 @@
                 <form string="Course Form">
                     <sheet>
                       <group>
-                        <button name="%(ultra_shine.crear_batalla_action)d"
-                          type="action"
-                          string="Crear batalla personalizado"
-                          class="btn btn-primary"
-                          ></button>
+                        
                         
                         <group string = "Selecciona al personaje 1">
                           <field name="player1"/>
                           <field name="sprite1" widget="image"/>
                           
+                          <field name="winner"/>
+                            <field name="winnersprite" widget="image"/>
                         </group>
                         <group string = "Selecciona al personaje 2">
                           <field name="player2"/>
-                          <field name="sprite2" widget="image"/>
-                        </group>
-                         <group string = "PELEA!">
-                         <button name="accionBatalla"
+                          <field name="sprite2" widget="image"/>  
+                          
+                            <field name="dateInicio"></field>
+                            <field name="dateFinal"></field>
+
+                    <button name="accionBatalla"
                                   type="object"
                                   string="PELEA"
                                   class="btn btn-primary"
                           ></button>
-                          </group>
-                          <group string="GANADOR">
-                            <field name="winner"/>
-                            <field name="winnersprite" widget="image"/>
+                             <button name="%(ultra_shine.crear_batalla_action)d"
+                          type="action"
+                          string="Crear batalla personalizado (WIZARD)"
+                          class="btn btn-primary"
+                          ></button>
                           </group>                         
-                          <group string="Fechas">
-                            <field name="dateInicio"></field>
-                            <field name="dateFinal"></field>
-                          </group>   
+                        
                       </group>
                     </sheet>
                   </form>
