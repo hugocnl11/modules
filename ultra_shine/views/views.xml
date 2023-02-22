@@ -362,15 +362,56 @@
               </field>
             </record>
         
+        <record id="ultra_shine.crear_batalla_action" model="ir.actions.act_window">
+                  <field name="name">Crear Batalla</field>
+                  <field name="res_model">ultra_shine.crear_batalla_wizard</field>
+                  <field name="view_mode">form</field>
+                  <field name="target">new</field>
+
+
+          </record>
+
+        <record model="ir.ui.view" id="action_crear_batalla_wizardview">
+            <field name="name">ultra_shine.crear_batalla_wizard</field>
+            <field name="model">ultra_shine.crear_batalla_wizard</field>
+            <field name="arch" type="xml">
+                <form string="Select fortress">
+                        <header>
+                        <button name="action_next_pj2" type="object" string="Siguiente" class="oe_highlight"></button>
+                         
+                        <field name="state" widget="statusbar"/>
+                    </header>
+                        <group states="player1">
+                          <field name="player1"/>
+                          <field name="sprite1" widget="image"/>
+                        </group>
+                        <group states="player2">
+                          <field name="player2"/>
+                          <field name="sprite2" widget="image"/>
+                        </group>
+                        <group states="3">
+                            <field name="dateInicio"></field>
+                            <field name="dateFinal"></field>
+                        </group>
+                        
+                </form>
+            </field>
+        </record> 
+
+
         <record model="ir.ui.view" id="ultra_shine.batalla_form">
-            
             <field name="name">ultra_shine batalla form</field>
             <field name="model">ultra_shine.batalla</field>
             <field name="arch" type="xml">
                 <form string="Course Form">
                     <sheet>
                       <group>
-                      
+                        <button name="%(ultra_shine.crear_batalla_action)d"
+                          type="action"
+                          string="Crear batalla personalizado"
+                          class="btn btn-primary"
+                          ></button>
+                        
                         <group string = "Selecciona al personaje 1">
                           <field name="player1"/>
                           <field name="sprite1" widget="image"/>
@@ -394,7 +435,7 @@
                           <group string="Fechas">
                             <field name="dateInicio"></field>
                             <field name="dateFinal"></field>
-                          </group>                    
+                          </group>   
                       </group>
                     </sheet>
                   </form>

@@ -5,3 +5,4 @@ access_ultra_shine_banner_personaje,ultra_shine.banner_personaje,model_ultra_shi
 access_ultra_shine_enemigo,ultra_shine.enemigo,model_ultra_shine_enemigo,base.group_user,1,1,1,1
 access_ultra_shine_batalla,ultra_shine.batalla,model_ultra_shine_batalla,base.group_user,1,1,1,1
 access_ultra_shine_crear_banner_wizard,ultra_shine.crear_banner_wizard,model_ultra_shine_crear_banner_wizard,base.group_user,1,1,1,1
+access_ultra_shine_crear_batalla_wizard,ultra_shine.crear_batalla_wizard,model_ultra_shine_crear_batalla_wizard,base.group_user,1,1,1,1

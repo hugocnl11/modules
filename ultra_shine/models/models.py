@@ -55,10 +55,104 @@ class Batalla(models.Model):
                 b.winner = nombre2
                 b.winnersprite = b.sprite2
 
+class crear_batalla_wizard(models.TransientModel):
+    _name = 'ultra_shine.crear_batalla_wizard'
+    _description = 'Wizard para crear articulo'
 
+    player1=fields.Many2one('ultra_shine.personaje_unidad')
+    player2=fields.Many2one('ultra_shine.personaje')
+
+    sprite1 = fields.Image(related='player1.spriteAnimado')
+    sprite2 = fields.Image(related='player2.spriteAnimado')
+
+    dateInicio = fields.Datetime() 
+    dateFinal = fields.Datetime()
+
+    winner = fields.Char()
+     
+    winnersprite = fields.Image()
+
+    state = fields.Selection([
+        ('player1', "Personaje1"),
+        ('player2', "Personaje2"),
+        ('3', "Tiempo de Batalla"),                                          
+      ], default='player1')
+
+    @api.model_create_multi     
+    def action_acceder_personaje1(self):
+        self.state = 'player1'
+        return {
+            'type': 'ir.actions.act_window',
+            'res_model': self._name,
+            'res_id': self.id,
+            'view_mode': 'form',
+            'target': 'new',
+        }   
+    
+    @api.model_create_multi     
+    def action_acceder_personaje2(self):
+        self.state = 'personaje2'
+        return {
+            'type': 'ir.actions.act_window',
+            'res_model': self._name,
+            'res_id': self.id,
+            'view_mode': 'form',
+            'target': 'new',
+        }
+    
+    @api.model_create_multi     
+    def action_acceder_tiempo_batalla(self):
+        self.state = 'tiempo'
+        return {
+            'type': 'ir.actions.act_window',
+            'res_model': self._name,
+            'res_id': self.id,
+            'view_mode': 'form',
+            'target': 'new',
+        }
+    
     
 
+    def action_next_pj2(self):
+        if self.state == 'player1':
+            if len(self.player1) < 1:
+                return {
+                    'type': 'ir.actions.client',
+                    'tag': 'display_notification',
+                    'params': {
+                        'message': 'Player1 has to be choosed',
+                        'type': 'danger',  # types: success,warning,danger,info
+                        'sticky': False,
+                    }
+                }
+            else:
+                self.state = 'player2'
+                
+        elif self.state == 'player2':
+            if len(self.player2) < 1:
+                return {
+                    'type': 'ir.actions.client',
+                    'tag': 'display_notification',
+                    'params': {
+                        'message': 'Player2 has to be choosed',
+                        'type': 'danger',  # types: success,warning,danger,info
+                        'sticky': False,
+                    }
+                }
+            else:
+                self.state = '3'
+        return {
+            'name': 'Create Battle',
+            'type': 'ir.actions.act_window',
+            'res_model': 'ultra_shine.crear_batalla_wizard',
+            'view_mode': 'form',
+            'target': 'new',
+            'res_id': self.id,
+            'context': dict(self._context, player1_context=self.player1.id),
 
+        }
+
+        
 
 class Personaje(models.Model):
     _name = 'ultra_shine.personaje'
